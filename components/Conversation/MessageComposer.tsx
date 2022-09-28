@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import InputEmoji from 'react-input-emoji'
 import { classNames } from '../../helpers'
 import messageComposerStyles from '../../styles/MessageComposer.module.css'
 import upArrowGreen from '../../public/up-arrow-green.svg'
@@ -46,7 +45,7 @@ const MessageComposer = ({ onSend }: MessageComposerProps): JSX.Element => {
         autoComplete="off"
         onSubmit={onSubmit}
       >
-        {/* <input
+        <input
           type="text"
           placeholder="Type something..."
           className={classNames(
@@ -59,8 +58,8 @@ const MessageComposer = ({ onSend }: MessageComposerProps): JSX.Element => {
           name="message"
           value={message}
           required
-        /> */}
-
+        />
+        {/* 
         <InputEmoji
           type="text"
           className={classNames(
@@ -75,7 +74,7 @@ const MessageComposer = ({ onSend }: MessageComposerProps): JSX.Element => {
           placeholder="Type a message"
           required
           // onChange={onMessageChange}
-        />
+        /> */}
         <button type="submit" className={messageComposerStyles.arrow}>
           <img
             src={message ? upArrowGreen : upArrowGrey}
