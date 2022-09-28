@@ -41,7 +41,15 @@ const MessageComposer = ({ onSend }: MessageComposerProps): JSX.Element => {
       )}
     >
       <form
-        className={classNames('flex', 'w-full', 'py-2', 'pl-4', 'mr-3')}
+        className={classNames(
+          'flex',
+          'w-full',
+          'border',
+          'py-2',
+          'pl-4',
+          'mr-3',
+          messageComposerStyles.bubble
+        )}
         autoComplete="off"
         onSubmit={onSubmit}
       >
@@ -57,24 +65,9 @@ const MessageComposer = ({ onSend }: MessageComposerProps): JSX.Element => {
           )}
           name="message"
           value={message}
+          onChange={onMessageChange}
           required
         />
-        {/* 
-        <InputEmoji
-          type="text"
-          className={classNames(
-            'block',
-            'w-full',
-            'text-md',
-            'md:text-sm',
-            messageComposerStyles.input
-          )}
-          value={message}
-          name="message"
-          placeholder="Type a message"
-          required
-          // onChange={onMessageChange}
-        /> */}
         <button type="submit" className={messageComposerStyles.arrow}>
           <img
             src={message ? upArrowGreen : upArrowGrey}
